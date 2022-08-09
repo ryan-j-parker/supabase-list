@@ -1,4 +1,4 @@
-function renderCountryCard(country) {
+export function renderCountryCard(country) {
 
     const div = document.createElement('div');
     const a = document.createElement('a');
@@ -17,7 +17,7 @@ function renderCountryCard(country) {
     return a;
 }
 
-function renderCountryDetail(country) {
+export function renderCountryDetail(country) {
     const div = document.createElement('div');
     const exportEl = document.createElement('p');
     const nameEl = document.createElement('p');

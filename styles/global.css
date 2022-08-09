@@ -37,6 +37,9 @@ footer {
 .country-card {
     padding: 10px;
     margin: 10px;
+    background-color: rgba(0, 128, 0, 0.534);
+    height: 500px;
+    width: 500px;
 }
 
 .country-detail {
