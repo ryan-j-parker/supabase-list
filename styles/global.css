@@ -33,3 +33,13 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+
+.country-card {
+    padding: 10px;
+    margin: 10px;
+}
+
+.country-detail {
+    padding: 10px;
+    margin: 10px;
+}
