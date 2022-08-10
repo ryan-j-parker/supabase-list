@@ -1,42 +1,55 @@
 export function renderCountryCard(country) {
 
-    const div = document.createElement('div');
+    const countryCard = document.createElement('div');
     const a = document.createElement('a');
-    const p = document.createElement('p');
-    const img = document.createElement('img');
+    const h3 = document.createElement('h3');
+    const flagImg = document.createElement('img');
 
-    div.classList.add('country-card');
+    countryCard.classList.add('country-card');
+    flagImg.classList.add('country-flag');
+    a.classList.add('each-country');
 
-    p.textContent = country.name;
-    img.src = `./assets/${country.img}.png`;
+    h3.textContent = country.name;
+    flagImg.src = `./assets/${country.name}-flag.png`;
     a.href = `./detail/?id=${country.id}`;
 
-    div.append(p, img);
-    a.append(div);
+    countryCard.append(h3, a);
+    a.append(flagImg);
 
-    return a;
+    return countryCard;
 }
 
 export function renderCountryDetail(country) {
-    const div = document.createElement('div');
+    const detailContainerEl = document.createElement('div');
     const exportEl = document.createElement('p');
-    const nameEl = document.createElement('p');
+    const nameEl = document.createElement('h1');
     const populationEl = document.createElement('p');
     const sizeEl = document.createElement('p');
     const landmarksEl = document.createElement('p');
     const img = document.createElement('img');
+    
+    nameEl.textContent = country.name;
+    nameEl.classList.add('country-name');
+    
+    exportEl.textContent = `Primary export is ${country.primary_export}`;
+    exportEl.classList.add('country-export');
+    
+    populationEl.textContent = `Population: ${country.population}`;
+    populationEl.classList.add('country-pop');
+    
+    sizeEl.textContent = `${country.size_sq_mi} square miles`;
+    sizeEl.classList.add('country-size');
+    
+    landmarksEl.textContent = `Notable landmarks include ${country.landmarks}`;
+    landmarksEl.classList.add('country-landmarks');
 
-    nameEl.textContent = central_american_countries.name;
-    exportEl.textContent = central_american_countries.primary_export;
-    populationEl.textContent = central_american_countries.population;
-    sizeEl.textContent = central_american_countries.size_sq_mi;
-    landmarksEl.textContent = central_american_countries.landmarks;
+    img.src = `../assets/${country.name}.png`;
+    img.classList.add('detail-img');
 
-    img.src = `../assets/${country.img}.png`;
+    detailContainerEl.classList.add('country-detail');
+    img.classList.add('country-img');
 
-    div.classList.add('country-detail');
+    detailContainerEl.append(nameEl, sizeEl, populationEl, exportEl, landmarksEl, img);
 
-    div.append(nameEl, sizeEl, populationEl, exportEl, landmarksEl, img);
-
-    return div;
+    return detailContainerEl;
 }

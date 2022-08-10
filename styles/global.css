@@ -1,13 +1,10 @@
 :root {
-    --background: rgb(224, 234, 247);
     --header-background: white;
     --footer-background: rgb(243, 242, 242);
 }
 
 body {
     height: 100vh;
-    font-family: 'Rubik', san-serif;
-    background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
@@ -34,15 +31,88 @@ footer {
     background-color: var(--footer-background);
 }
 
+.country-container {}
+
+.countries-section {
+    width: 100vw;
+    display: grid;
+}
+
 .country-card {
+    display: inline-block;
     padding: 10px;
     margin: 10px;
-    background-color: rgba(0, 128, 0, 0.534);
-    height: 500px;
-    width: 500px;
+    background-color: rgba(0, 128, 0, 0.795);
+    height: 400px;
+    width: 400px;
+}
+
+h1 {
+    box-shadow: 1px 12px 15px -13px 65%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url('/assets/moving-clouds.gif');
+    color: transparent;
+    font-size: 3rem;
+    font-family: 'Alfa Slab One', serif;
+}
+
+h2 {
+    font-size: 3rem;
+    box-shadow: 1px 12px 15px -13px 65%;
+    font-size: 3rem;
+    text-decoration: none;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url('/assets/moving-clouds.gif');
+    color: transparent;
+    font-family: 'Alfa Slab One', serif;
 }
 
 .country-detail {
     padding: 10px;
     margin: 10px;
+}
+
+.country-flag {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.detail-img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.detail-view {}
+
+.country-name {
+    font-size: 3rem;
+    color: white;
+}
+
+.country-export {}
+
+.country-pop {}
+
+.country-size {}
+
+.country-landmarks {}
+
+.guatemala-class {
+    font-family: cursive;
+    color: red;
+}
+
+.panama-class {
+    font-family: cursive;
+    color: red;
+}
+
+.nicaragua-class {
+
+font-family: cursive;
+color: red;
 }
