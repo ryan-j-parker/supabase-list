@@ -20,6 +20,7 @@ export function renderCountryCard(country) {
 }
 
 export function renderCountryDetail(country) {
+    const mainEl = document.querySelector('main');
     const detailContainerEl = document.createElement('div');
     const exportEl = document.createElement('p');
     const nameEl = document.createElement('h1');
@@ -30,6 +31,14 @@ export function renderCountryDetail(country) {
     
     nameEl.textContent = country.name;
     nameEl.classList.add('country-name');
+
+    if (country.name === 'Costa Rica') {
+        mainEl.classList.add('Costa-Rica');
+    } else if (country.name === 'El Salvador') {
+        mainEl.classList.add('El-Salvador');
+    } else {
+        mainEl.classList.add(`${country.name}`);
+    }
     
     exportEl.textContent = `Primary export is ${country.primary_export}`;
     exportEl.classList.add('country-export');
@@ -50,6 +59,6 @@ export function renderCountryDetail(country) {
     img.classList.add('country-img');
 
     detailContainerEl.append(nameEl, sizeEl, populationEl, exportEl, landmarksEl, img);
-
+    mainEl.append(detailContainerEl);
     return detailContainerEl;
 }
