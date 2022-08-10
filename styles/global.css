@@ -14,11 +14,13 @@ header {
     top: 0;
     display: flex;
     align-items: center;
-    background-color: var(--header-background);
+    background-color: #00000028;
+    height: 70%;
 }
 
 main {
     padding: 20px;
+    background: linear-gradient(#CA998F 20% #778CF2);
 }
 
 footer {
@@ -28,10 +30,19 @@ footer {
     font-size: .8em;
     display: flex;
     justify-content: flex-end;
-    background-color: var(--footer-background);
+    background-color: #00000028;
+    ;
 }
 
-.country-container {}
+a {
+    text-decoration: none;
+    color: rgba(255, 166, 0, 0.664);
+    background-color: rgba(255, 255, 255, 0.11);
+}
+
+.country-container {
+    box-shadow: 10px 13px 23px -10px rgba(255, 255, 255, 0.95);
+}
 
 .countries-section {
     width: 100vw;
@@ -40,25 +51,57 @@ footer {
 
 .country-card {
     display: inline-block;
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
     background-color: rgba(0, 128, 0, 0.795);
     height: 400px;
     width: 400px;
+    border-radius: 15px;
+    box-shadow: 4px 10px 33px -13px rgba(0, 0, 0, 0.85);
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-center {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 h1 {
     box-shadow: 1px 12px 15px -13px 65%;
     -webkit-background-clip: text;
     background-clip: text;
-    background-image: url('/assets/moving-clouds.gif');
-    color: transparent;
+    background-color: rgba(0, 128, 0, 0.795);
     font-size: 3rem;
     font-family: 'Alfa Slab One', serif;
 }
 
+.country-detail {
+    font-size: 2rem;
+    width: 50%;
+    display: inline-block;
+}
+
+#country-detail-container h1 {
+    background-color: black;
+}
+
+.country-name {
+    color: black;
+}
+
+.countries-section h2 {
+    font-size: 4.5rem;
+}
+
 h2 {
-    font-size: 3rem;
+    font-size: 4.5rem;
     box-shadow: 1px 12px 15px -13px 65%;
     font-size: 3rem;
     text-decoration: none;
@@ -67,52 +110,90 @@ h2 {
     background-image: url('/assets/moving-clouds.gif');
     color: transparent;
     font-family: 'Alfa Slab One', serif;
+    box-shadow: 1px 12px 15px -13px rgba(0, 0, 0, 0.65);
+    width: 50%;
+    text-align: center;
+    margin-top: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    color: white;
+    font-size: 2rem;
+    box-shadow: 1px 12px 15px -13px rgba(0, 0, 0, 0.65);
+    width: 200px;
+    text-align: center;
+    background-color: rgba(25, 177, 25, 0.288);
+    border-radius: 20px;
+}
+
+h4 {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.473);
+}
+
+div.country-card.country-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div#country-list-container {
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
 .country-detail {
     padding: 10px;
     margin: 10px;
+    background-color: rgba(0, 0, 255, 0.178);
+    box-shadow: 10px -8px 12px -14px rgba(0, 0, 0, 0.65);
+        
 }
 
 .country-flag {
+    border-top: 2px solid #0000003f;
+    border-right: 6px outset #00000011;
+    border-left: 2px solid #00000034;
     width: 300px;
     height: 200px;
     object-fit: cover;
+    box-shadow: 10px 10px 43px -19px rgba(255, 255, 255, 0.55);
+}
+
+.country-flag:active {
+    transform: scale(.95);
 }
 
 .detail-img {
     width: 600px;
     height: 600px;
     object-fit: cover;
+    box-shadow: -4px -4px 12px -9px rgba(0, 0, 0, 0.65);
+    border-radius: 5px;
 }
-
-.detail-view {}
 
 .country-name {
     font-size: 3rem;
-    color: white;
+    background-color: red;
+    font-family: 'Alfa Slab One';
+    font-weight: 800;
+    width: 50%;
+    box-shadow: 0px 4px 5px -4px rgba(0, 0, 0, 0.65);
+    box-sizing: border-box;
+    text-align: center;
 }
 
-.country-export {}
-
-.country-pop {}
-
-.country-size {}
-
-.country-landmarks {}
-
-.guatemala-class {
-    font-family: cursive;
-    color: red;
+.country-export, .country-pop, .country-size, .country-landmarks {
+    font-size: 1.9rem;
+    font-family: 'Alfa Slab One';
+    
 }
 
-.panama-class {
-    font-family: cursive;
-    color: red;
-}
-
-.nicaragua-class {
-
-font-family: cursive;
-color: red;
+.country-pop {
+    color: rgb(255, 255, 255);
 }

@@ -8,6 +8,7 @@ const params = new URLSearchParams(window.location.search);
 async function loadCountryData() {
     const data = await getACountry(params.get('id'));
     const countryDiv = renderCountryDetail(data);
+
     countryDetailContainer.append(countryDiv);
 }
 
