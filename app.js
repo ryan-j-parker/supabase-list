@@ -1,8 +1,15 @@
-// import functions and grab DOM elements
+import { getAllCountries } from './fetch-utils.js';
+import { renderCountryCard } from './render-utils.js';
 
-// let state
+const countryListContainer = document.getElementById('country-list-container');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+async function loadAllCountries() {
+    const central_american_countries = await getAllCountries();
+
+    for (let country of central_american_countries) {
+        const countryContainer = renderCountryCard(country);
+        countryContainer.classList.add('country-container');
+        countryListContainer.append(countryContainer);
+    }
+}
+loadAllCountries();
